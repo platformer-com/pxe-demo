@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: env-config
+data:
+  env: production
+  version: "1.1.111110"
+  name: daminda
+  key: value

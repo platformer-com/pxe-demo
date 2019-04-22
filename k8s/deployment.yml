@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  annotations:
+    kubernetes.io/change-cause: "nj93/sample-app:v1 - increased replicas to 3"
+  labels:
+    run: sample-app
+  name: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sample-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: sample-app
+    spec:
+      containers:
+      - image: nj93/sample-app:v1
+        name: sample-app
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: ENV_NAME
+          value: development
+        - name: PLATFORMER_IMG_TAG
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: version
+        volumeMounts:
+        - name: config-from-map
+          mountPath: /app/config/config.json
+          subPath: some-key-name
+      volumes:
+      - name: config-from-map
+        configMap:
+          name: file-cm
+  
+status: {}

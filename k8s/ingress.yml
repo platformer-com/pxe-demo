@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sample-app
+  annotations:
+   kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: test-april.kubernetes.lk
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sample-app
+          servicePort: 8080 # although you mention service port you have to enter pod port
+  # tls:
+  #   - hosts:
+  #     - test-april.kubernetes.lk
+  #     secretName: platformer-dev-tls 

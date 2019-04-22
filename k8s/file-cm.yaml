@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  some-key-name: "{\r\n    \"APP_VERSION\": \"3.0.0\"\r\n}"
+  version: "1.0"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: file-cm

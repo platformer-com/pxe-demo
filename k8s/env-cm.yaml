@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  app: sample-app
+  language: js
+  name: sample-app
+  version: "1.000"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: env-cm
