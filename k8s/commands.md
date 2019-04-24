@@ -28,3 +28,9 @@ kubectl create cm env-config --from-literal=env=production --from-literal=versio
 kubectl create cm file-cm --from-file=some-key-name=config/config.json --dry-run -o yaml > k8s/file-cm.yaml
 kubectl create cm file-cm --from-file=some-key-name=config/config.json --from-literal=version=1.0 --dry-run -o yaml > k8s/file-cm.yaml
 kubectl create cm env-cm --from-env-file=config/key-values.env  --dry-run -o yaml > k8s/env-cm.yaml
+
+
+
+## secrets
+kubectl create secret generic  env-secret --from-literal=env=production --from-literal=version=1.0 --dry-run -o yaml > app-secret.yaml
+kubectl create secret tls cert-name --key key.pem --cert cert.pem
