@@ -16,7 +16,7 @@ EXPOSE 8080
 
 ARG BUILD_ARG=test-fail
 
-ENV development=$BUILD_ARG
+ENV ENV_NAME=$BUILD_ARG
 
 RUN echo "hello $BUILD_ARG"
 
