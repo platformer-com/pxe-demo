@@ -14,4 +14,6 @@ COPY . .
 
 EXPOSE 8080
 
+ENV development=$BUILD_ARG
+
 CMD [ "node", "app.js" ]
