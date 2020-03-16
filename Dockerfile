@@ -14,6 +14,10 @@ COPY . .
 
 EXPOSE 8080
 
+ARG BUILD_ARG=test-fail
+
 ENV development=$BUILD_ARG
+
+RUN echo "hello $BUILD_ARG"
 
 CMD [ "node", "app.js" ]
