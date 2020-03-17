@@ -10,6 +10,6 @@ services:
     command: 
     - /bin/sh
     - -c
-    - "wget http://app:8080"
+    - "wget http://web:8080"
     depends_on:
     - app
