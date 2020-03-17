@@ -1,7 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME-$COMMIT_SHA', '.']
-- name: nj93/docker-compose-builder:1.0
+- name: gcr.io/platformer-public/docker-compose-builder:1.0
   args: ['up', '--exit-code-from', 'test']
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME-$COMMIT_SHA']
 

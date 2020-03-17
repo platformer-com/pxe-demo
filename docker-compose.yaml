@@ -4,12 +4,11 @@ services:
     build: .
     ports:
     - "8080:8080"
-    image: pxe-demo:latest
   test:
     image: busybox
     command: 
     - /bin/sh
     - -c
-    - "wget http://web:8080"
+    - "wget http://app:8080"
     depends_on:
     - app
