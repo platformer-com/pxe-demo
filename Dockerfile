@@ -20,4 +20,5 @@ ENV ENV_NAME=$BUILD_ARG
 
 RUN echo "hello $BUILD_ARG"
 
+
 CMD [ "node", "app.js" ]
